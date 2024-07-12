@@ -10,6 +10,8 @@ A Decentralized Big Data Infrastructure.
 
 ## Local setup
 
+### Install requirements
+
 1. Clone repo
 2. Use correct node version in `.nvmrc` or run `nvm use`
 3. Install yarn: `npm install -g yarn`
@@ -18,18 +20,28 @@ A Decentralized Big Data Infrastructure.
 6. Setup python venv: `python -m venv venv"`
 7. Activate venv: `source venv/bin/activate`
 8. Install python requirements: `pip install -r ./requirements.txt`
-9. Start the app: `yarn start`
+
+### Setup environment variables
+
+1. Under `./backend` create a `.env` file
+2. Add `LIGHTHOUSE_TOKEN=<token>` create a token here: https://files.lighthouse.storage/dashboard/apikey
+
+### Start the Application
+
+`yarn start`
+
+Or you can run the UI and Backend separately:
+
+1. Start the backend: `yarn start:backend`
+2. Start the frontend: `yarn start:ui`
+
+### Accessing the application
 
 You access the different parts of the APP:
 
 1. UI: http://localhost:3000/
 2. APIs: http://127.0.0.1:5001/demeter-a0451/europe-west1/on_request/
 3. Firebase Emulators: http://127.0.0.1:4000/
-
-Or you can run the UI and Backend separately:
-
-1. Start the backend: `yarn start:backend`, it will start the firebase function emulator
-2. Start the frontend: `yarn start:ui`
 
 ## Deploy
 
