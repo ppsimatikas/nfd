@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "build": "yarn workspace ui run build",
-    "emulate": "firebase emulators:start",
+    "start:ui": "yarn workspace ui run start",
+    "start:backend": "firebase emulators:start",
+    "start": "yarn start:backend & yarn start:ui",
     "verify": "yarn workspace ui run test"
   },
   "dependencies": {
