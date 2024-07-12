@@ -22,3 +22,8 @@ Or you can run the UI and Backend separately:
 
 1. Start the backend: `yarn start:backend`, it will start the firebase function emulator
 2. Start the frontend: `yarn start:ui`
+
+## Deploy
+
+This project is using CI/CD pipelines to deploy on Firebase cloud.
+Every merge on the main branch will automatically deploy the application into firebase.
