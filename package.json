@@ -4,6 +4,14 @@
   "description": "A Decentralized Big Data Infrastructure.",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "ui"
+  ],
+  "scripts": {
+    "build": "yarn workspace ui run build",
+    "emulate": "firebase emulators:start",
+    "verify": "yarn workspace ui run test"
+  },
   "dependencies": {
     "firebase-tools": "^13.13.2"
   }
