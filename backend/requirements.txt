@@ -1,0 +1,5 @@
+firebase_functions~=0.1.0
+pandas==2.2.2
+lighthouseweb3==0.1.4
+pandasql==0.7.3
+pyarrow==16.1.0
