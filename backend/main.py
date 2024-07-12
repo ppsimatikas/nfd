@@ -1,13 +1,18 @@
-# Welcome to Cloud Functions for Firebase for Python!
-# To get started, simply uncomment the below code or create your own.
-# Deploy with `firebase deploy`
+from firebase_functions import https_fn, options
 
-from firebase_functions import https_fn
-from firebase_admin import initialize_app
+from api.controllers.tables_controller import process_tables_call
 
-# initialize_app()
-#
-#
-# @https_fn.on_request()
-# def on_request_example(req: https_fn.Request) -> https_fn.Response:
-#     return https_fn.Response("Hello world!")
+
+@https_fn.on_request(
+    region="europe-west1",
+    cors=options.CorsOptions(cors_origins="*", cors_methods=["post", "get"]),
+    timeout_sec=120,
+    memory=options.MemoryOption.MB_512,
+    enforce_app_check=True
+)
+def on_request(req: https_fn.Request) -> https_fn.Response:
+    match req.path:
+        case "/tables":
+            return process_tables_call(req)
+        case _:
+            return https_fn.Response(status=404, response="Not Found")

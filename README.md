@@ -14,9 +14,17 @@ A Decentralized Big Data Infrastructure.
 2. Use correct node version in `.nvmrc` or run `nvm use`
 3. Install yarn: `npm install -g yarn`
 4. Install libraries: `yarn`
-5. Start the app: `yarn start`
-6. Visit: http://localhost:3000/ for the ui
-7. Visit: http://127.0.0.1:4000/ for the firebase emulator suite
+5. `cd backend`
+6. Setup python venv: `python -m venv venv"`
+7. Activate venv: `source venv/bin/activate`
+8. Install python requirements: `pip install -r ./requirements.txt`
+9. Start the app: `yarn start`
+
+You access the different parts of the APP:
+
+1. UI: http://localhost:3000/
+2. APIs: http://127.0.0.1:5001/demeter-a0451/europe-west1/on_request/
+3. Firebase Emulators: http://127.0.0.1:4000/
 
 Or you can run the UI and Backend separately:
 
