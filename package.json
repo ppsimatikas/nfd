@@ -1,0 +1,10 @@
+{
+  "name": "nfd",
+  "version": "1.0.0",
+  "description": "A Decentralized Big Data Infrastructure.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "firebase-tools": "^13.13.2"
+  }
+}
