@@ -1,5 +1,5 @@
 import React from 'react';
-import {Anchor, Box, Button, Container, Group} from '@mantine/core';
+import {Anchor, Box, Button, Container, Group, Image} from '@mantine/core';
 import {Link} from 'react-router-dom';
 import styles from './Header.module.css';
 import {User} from "../user";
@@ -10,21 +10,21 @@ function Header() {
         <Box component="header" className={styles.header}>
             <Container className={styles.container}>
                 <Anchor component={Link} to="/" className={styles.logo}>
-                    Demeter
+                    <Image src="logo.png" alt="Logo" width={60} height={60} />
                 </Anchor>
                 <Group className={styles.nav}>
-                    <Anchor component={Link} to="/explore">
+                    <Button component={Link} to="/explore" className={styles.navButton} radius="lg">
                         Explore
-                    </Anchor>
-                    <Anchor component={Link} to="/analytics">
+                    </Button>
+                    <Button component={Link} to="/analytics" className={styles.navButton} radius="lg">
                         Analytics
-                    </Anchor>
-                    <Anchor component={Link} to="/chat">
+                    </Button>
+                    <Button component={Link} to="/chat"  className={styles.navButton} radius="lg">
                         Chat with Demeter !
-                    </Anchor>
+                    </Button>
                 </Group>
                 <Group className={styles.nav}>
-                    <Button component={Link} to="/create" radius="lg">
+                    <Button component={Link} to="/create" radius="lg" color="#260046">
                         <Group gap={5}>
                             <IconPlus/> Create
                         </Group>
