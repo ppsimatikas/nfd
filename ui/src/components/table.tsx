@@ -9,14 +9,14 @@ export function UiTable({data}: { data: any[] }) {
             <Table border={1}>
                 <Table.Thead>
                     <Table.Tr>
-                        {columns.map((c: string) => <Table.Th>{c}</Table.Th>)}
+                        {columns.map((c: string) => <Table.Th key={c}>{c}</Table.Th>)}
                     </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>
                     {
                         data.slice(0, 10).map((d: any, i) => (
                             <Table.Tr key={i}>
-                                {columns.map((column: any) => <Table.Td align="left">{d[column]}</Table.Td>)}
+                                {columns.map((column: any, j) => <Table.Td key={j} align="left">{d[column]}</Table.Td>)}
                             </Table.Tr>
                         ))
                     }
