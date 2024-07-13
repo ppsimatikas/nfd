@@ -6,7 +6,7 @@ export function LaunchDAppButton() {
     const navigate = useNavigate();
 
     const handleLaunchDApp = () => {
-        navigate('/landing-page'); // Adjust the route as per your application setup
+        navigate('/explore'); // Adjust the route as per your application setup
     };
 
     return (

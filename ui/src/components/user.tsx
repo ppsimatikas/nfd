@@ -2,6 +2,7 @@ import {Avatar, Button, Group, Popover, Text} from "@mantine/core";
 import {getModal, getUser, reconnectWallet} from "../utils/wallet";
 import {ConnectWalletButton} from "./wallet_connect";
 import {useEffect, useState} from "react";
+import {toastError} from "./ui-toast";
 import {UiLoader} from "./loader";
 
 export function User() {
@@ -29,19 +30,16 @@ export function User() {
     const lastFour = w.substring(w.length - 4, w.length)
     const wallet = `${firstFour}...${lastFour}`
 
+    const handleButtonClick = () => {
+        getModal().open().catch((e: any) => toastError(e));
+    };
+
     return (
-        <Popover trapFocus position="bottom" withArrow shadow="md">
-            <Popover.Target>
-                <Button>
-                    <Group>
-                        <Avatar size="sm" src={walletInfo?.icon} color="white"/>
-                        <Text>{wallet}</Text>
-                    </Group>
-                </Button>
-            </Popover.Target>
-            <Popover.Dropdown>
-                <Button onClick={() => getModal().open()}>Disconnect</Button>
-            </Popover.Dropdown>
-        </Popover>
+        <Button onClick={handleButtonClick}>
+            <Group>
+                <Avatar size="sm" src={walletInfo?.icon} color="white" />
+                <Text>{wallet}</Text>
+            </Group>
+        </Button>
     )
 }
