@@ -4,7 +4,7 @@ import {toastError} from "./ui-toast";
 
 export function ConnectWalletButton() {
     return (
-        <Button onClick={() =>
+        <Button w={150} onClick={() =>
             getModal().open().catch((e: any) => toastError(e))
         }>
             Connect Wallet

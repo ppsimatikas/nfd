@@ -3,7 +3,7 @@ import {ConnectWalletButton} from "../components/wallet_connect";
 import {getModal, getUser, reconnectWallet} from "../utils/wallet";
 import Upload from "../components/upload";
 import {UiLoader} from "../components/loader";
-import {User} from "../components/user";
+import {Center, Stack, Text, Title} from "@mantine/core";
 
 function Create() {
     const [loading, setLoading] = useState(true);
@@ -21,13 +21,24 @@ function Create() {
     }
 
     if (!account.isConnected) {
-        return <ConnectWalletButton/>
+        return (
+            <Stack h="500" pt={100}>
+                <Title>Verification Required</Title>
+                <Text>We need to verify you before you can enhance Demeter's knowledge with your data</Text>
+                <Center>
+                    <ConnectWalletButton/>
+                </Center>
+            </Stack>
+        )
     }
 
-    return <>
-        <User/>
-        <Upload/>
-    </>
+    return (
+        <Stack>
+            <Title>Enhance Demeter's knowledsge !</Title>
+            <Text>Add your very own dataset in Demeter...</Text>
+            <Upload/>
+        </Stack>
+    )
 }
 
 export default Create;
