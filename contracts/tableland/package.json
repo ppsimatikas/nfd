@@ -1,0 +1,10 @@
+{
+  "name": "nfd-tableland",
+  "version": "0.1.0",
+  "description": "local development tableland node",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@tableland/local": "^3.0.2"
+  }
+}

@@ -1,0 +1,38 @@
+name: NFD
+
+plugins:
+  - name: hardhat
+  - name: solidity
+    version: 0.8.2
+
+dependencies:
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 5.0.2
+  - name: Tableland
+    github: tablelandnetwork/evm-tableland
+    version: 6.3.0
+  - name: erc721a-upgradeable
+    github: chiru-labs/ERC721A-Upgradeable
+    version: 4.2.3
+
+networks:
+  custom:
+    - name: tableland
+      ecosystem: ethereum
+      base_ecosystem_plugin: filecoin
+      chain_id: 31337
+      default_provider: node
+
+node:
+  ethererum:
+    tableland:
+      uri: http://127.0.0.1:8545/
+
+ethereum:
+  default_network: tableland
+  tableland:
+    default_transaction_type: 0
+
+
+
