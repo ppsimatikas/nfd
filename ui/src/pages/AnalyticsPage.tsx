@@ -1,11 +1,10 @@
-import {Center, Group, Select, Stack, Text, Title} from "@mantine/core";
+import {Center, Group, Loader, Select, Stack, Text, Title} from "@mantine/core";
 import {useRef, useState} from "react";
 import {Filter} from "../components/filters/filters";
 import {LayeredMap} from "../components/maps/layered_map";
 import {UiLineChart} from "../components/charts/line_chart";
 import {useGetFilteredData} from "../data-access/filters";
 import {UiBarChart} from "../components/charts/bar_chart";
-import {UiLoader} from "../components/loader";
 
 const catalog: any = {
     'agriculture': [
@@ -34,7 +33,6 @@ export function AnalyticsPage() {
                 <Title order={2}>Visualize Demeter's Datasets</Title>
                 <Text c="dimmed">Limited access for demo...</Text>
             </Stack>
-            {isLoading && <UiLoader/>}
             <Center>
                 <Stack>
                     <Group>
@@ -76,6 +74,7 @@ export function AnalyticsPage() {
                     {/*</Group>*/}
                 </Stack>
             </Center>
+            {isLoading && <Center mt={20}><Loader/></Center>}
             {data &&
                 <LayeredMap data={data} valCol={valueColumn} areaCol='Area' adminCol='ADMIN'
                             w={(ref.current as any).offsetWidth ?? 100}/>}

@@ -3,7 +3,7 @@ import SlowText from "../components/chat/slowtext";
 import LoadingDots from "../components/chat/loadingDots";
 import {useState} from "react";
 import Markdown from "react-markdown";
-import {Avatar, Box, Group, Stack, Text, Title} from "@mantine/core";
+import {Avatar, Box, Center, Group, Image, Stack, Text, Title} from "@mantine/core";
 import './Chat.scss';
 import {UiTable} from "../components/table";
 
@@ -49,7 +49,9 @@ export function ChatPage() {
     const renderWelcome = () => (
         <Stack mt={20}>
             <Title>Ask Demeter anything</Title>
-            <img src='logo_big.png' className="App-logo" alt="logo"/>
+            <Center>
+                <Image src='demeter.png' h={300} w={200}/>
+            </Center>
             <Text>the first <b>AI-trained</b> Goddess with vast knowledge on Agriculture data.</Text>
         </Stack>
     );
@@ -60,7 +62,7 @@ export function ChatPage() {
                 {
                     loading &&
                     <Group>
-                        <Avatar src="logo_big.png"/>
+                        <Avatar src="demeter.png"/>
                         <LoadingDots/>
                     </Group>
                 }
@@ -77,7 +79,7 @@ export function ChatPage() {
         return (
             <Group key={i} className="message-container">
                 <Group>
-                    <Avatar src={m.ai ? "logo_big.png" : null}/>
+                    <Avatar src={m.ai ? "demeter.png" : null}/>
                     {
                         i === 0 && m.ai ?
                             <SlowText text={m.message} textLoaded={() => setTextLoaded(true)}/> :

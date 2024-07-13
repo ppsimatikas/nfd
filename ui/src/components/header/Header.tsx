@@ -10,7 +10,7 @@ function Header() {
         <Box component="header" className={styles.header}>
             <Container className={styles.container}>
                 <Anchor component={Link} to="/" className={styles.logo}>
-                    <Image src="logo.png" alt="Logo" width={60} height={60} />
+                    <Image src="logo.png" alt="Logo" width={40} height={40}/>
                 </Anchor>
                 <Group className={styles.nav}>
                     <Button component={Link} to="/explore" className={styles.navButton} radius="lg">
@@ -19,7 +19,7 @@ function Header() {
                     <Button component={Link} to="/analytics" className={styles.navButton} radius="lg">
                         Analytics
                     </Button>
-                    <Button component={Link} to="/chat"  className={styles.navButton} radius="lg">
+                    <Button component={Link} to="/chat" className={styles.navButton} radius="lg">
                         Chat with Demeter !
                     </Button>
                 </Group>
