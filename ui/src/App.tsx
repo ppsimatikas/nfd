@@ -5,11 +5,13 @@ import NoMatch from "./pages/NoMatch";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import {Container} from "@mantine/core";
+import {Header} from "./components/header/Header";
+import Create from "./pages/Create";
 
 function Layout() {
     return (
         <div className="layout">
-            {/*<Header/>*/}
+            <Header/>
             <Container>
                 <Outlet/>
             </Container>
@@ -21,8 +23,9 @@ function App() {
     return (
         <div className="App">
             <Routes>
+                <Route index element={<Home/>}/>
                 <Route path="/" element={<Layout/>}>
-                    <Route index element={<Home/>}/>
+                    <Route path="/create" element={<Create/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="*" element={<NoMatch/>}/>
                 </Route>

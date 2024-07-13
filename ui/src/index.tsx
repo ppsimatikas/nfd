@@ -7,6 +7,7 @@ import {MantineProvider} from "@mantine/core";
 import {BrowserRouter} from "react-router-dom";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import './ui-theme-styles'
+import {Notifications} from "@mantine/notifications";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ root.render(
         <BrowserRouter>
             <MantineProvider>
                 <QueryClientProvider client={queryClient}>
+                    <Notifications/>
                     <App/>
                 </QueryClientProvider>
             </MantineProvider>
