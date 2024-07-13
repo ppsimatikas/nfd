@@ -29,7 +29,7 @@ export function UiLineChart({data, dataKey, col}: { data: any; dataKey: string; 
                 data={chartData}
                 dataKey={dataKey}
                 series={[
-                    {name: col, color: 'indigo.6'},
+                    {name: col, color: '#7928D2'},
                 ]}
                 curveType="linear"
             />

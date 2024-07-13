@@ -29,7 +29,7 @@ export function UiBarChart({data, dataKey, col}: { data: any; dataKey: string; c
                 data={chartData}
                 dataKey={dataKey}
                 series={[
-                    {name: col, color: 'indigo.6'},
+                    {name: col, color: '#7928D2'},
                 ]}
             />
         </Stack>
