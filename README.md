@@ -17,15 +17,15 @@ A Decentralized Big Data Infrastructure.
 3. Install yarn: `npm install -g yarn`
 4. Install libraries: `yarn`
 5. Smart contracts
-  1. `cd contracts/nfd`
-  2. Setup python venv: `python -m venv venv`
-  3. Activate venv: `source venv/bin/activate`
-  4. Install python requirements: `pip install -r ./requirements.txt`
+    1. `cd contracts/nfd`
+    2. Setup python venv: `python -m venv venv`
+    3. Activate venv: `source venv/bin/activate`
+    4. Install python requirements: `pip install -r ./requirements.txt`
 6. Backend
-  1. `cd backend`
-  2. Setup python venv: `python -m venv venv`
-  3. Activate venv: `source venv/bin/activate`
-  4. Install python requirements: `pip install -r ./requirements.txt`
+    1. `cd backend`
+    2. Setup python venv: `python -m venv venv`
+    3. Activate venv: `source venv/bin/activate`
+    4. Install python requirements: `pip install -r ./requirements.txt`
 
 ### Setup environment variables
 
