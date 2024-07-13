@@ -22,7 +22,6 @@ let modal: Web3Modal | undefined = undefined
 
 export function getModal(): Web3Modal {
     if (modal) {
-        console.log("existing");
         return modal
     }
 

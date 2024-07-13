@@ -1,10 +1,21 @@
-import {Group, Select} from "@mantine/core";
+import {Group, Loader, Select} from "@mantine/core";
 import {useGetValues} from "../../data-access/filters";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export function Filters() {
-    const {data, error, isLoading} = useGetValues("crops_and_livestock", "Item");
+export function Filter({table, column, onChange}: {
+    table: string
+    column: string
+    onChange: (item: string) => void
+}) {
+    const {data, error, isLoading} = useGetValues(table, column);
     const [value, setValue] = useState<string | null>(null)
+
+    useEffect(() => {
+        if (data) {
+            setValue(data[0])
+            onChange(data[0])
+        }
+    }, [data]);
 
     return (
         <Group>
@@ -13,10 +24,15 @@ export function Filters() {
                     label="Item"
                     data={data}
                     value={value}
-                    onChange={(o: any) => setValue(o.value)}
+                    onChange={(o: any) => {
+                        setValue(o)
+                        console.log("onChange", o);
+                        onChange(o)
+                    }}
                     searchable
                 />
             }
+            {isLoading && <Loader size="sm"/>}
         </Group>
     );
 }

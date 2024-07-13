@@ -15,8 +15,6 @@ export function normalizeToRange(variable: number, min: number, max: number, ran
 
     // Normalize the variable to the range [0, 1]
     const normalized = ((variable - min) * (newMax - newMin)) / (max - min) + newMin;
-    console.log("aaaaaaa");
-    console.log(normalized)
 
     // Map the normalized value to the range [0, rangeSize]
     return Math.round(normalized);
