@@ -1,0 +1,37 @@
+.container {
+ display: flex;
+ flex-direction: row;
+ align-items: flex-start;
+ /* Align items at the start of the container */
+ justify-content: center;
+ padding: 20px;
+}
+
+.tabs {
+ flex: 1;
+ /* Take up remaining space */
+ margin-right: 20px;
+ /* Add margin for spacing */
+}
+
+.description {
+ max-width: 400px;
+ /* Adjust as needed */
+}
+
+.text {
+ padding: 20px;
+}
+
+.image {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.image img {
+ max-width: 100%;
+ height: auto;
+ max-height: 400px;
+ /* Limit the height to avoid excessive length */
+}
