@@ -1,7 +1,8 @@
 from firebase_functions import https_fn, options
 
-from api.controllers.tables_controller import process_tables_call
+from api.controllers.ai_controller import process_ai_call
 from api.controllers.sql_controller import process_sql_call
+from api.controllers.tables_controller import process_tables_call
 
 
 @https_fn.on_request(
@@ -17,5 +18,7 @@ def on_request(req: https_fn.Request) -> https_fn.Response:
             return process_tables_call(req)
         case "/sql":
             return process_sql_call(req)
+        case "/ai":
+            return process_ai_call(req)
         case _:
             return https_fn.Response(status=404, response="Not Found")

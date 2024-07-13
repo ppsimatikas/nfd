@@ -10,6 +10,18 @@ def get_tables():
     return tables
 
 
+def get_table_list():
+    tables = get_tables()
+    list_of_tables = [
+        [f"{table}" for table in tables[schema]]
+        # [f"{schema}.{table}" for table in tables[schema]]
+        for schema in tables
+    ]
+
+    # flatten
+    return [item for sublist in list_of_tables for item in sublist]
+
+
 def create_table(data):
     df = pd.DataFrame(data["data"])
 

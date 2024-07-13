@@ -36,10 +36,10 @@ class Lighthouse(LighthouseWeb3):
 
     def download_df(self, filename_or_cid: str, schema: str = None) -> pd.DataFrame:
         files = self.list_files()
+        files = sorted(files, key=lambda x: x['createdAt'])
         cids = [f['cid'] for f in files if f['fileName'] == f"{filename_or_cid}.parquet"]
         cid = cids.pop() if len(cids) else filename_or_cid
 
         buffer = io.BytesIO()
         self.downloadBlob(buffer, cid)
         return pd.read_parquet(buffer)
-

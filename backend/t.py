@@ -1,3 +1,3 @@
-from ingestion.hunger.ingest import ingest
+from ingestion.crops_and_livestocks.ingest import ingest
 
 ingest()

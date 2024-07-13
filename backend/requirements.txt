@@ -1,6 +1,8 @@
 firebase_functions~=0.1.0
 pandas==2.2.2
 lighthouseweb3==0.1.4
-pandasql==0.7.3
 pyarrow==16.1.0
-python-dotenv==1.0.1
+pandasql==0.7.3
+langchain==0.0.345
+openai==0.28.0
+faostat==1.1.2

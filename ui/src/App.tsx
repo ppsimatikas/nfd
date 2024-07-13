@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import LandingPage from "./pages/LandingPage"
 import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
 import {Container} from "@mantine/core";
 import Create from "./pages/Create";
 import {AnalyticsPage} from "./pages/AnalyticsPage";
@@ -19,7 +18,7 @@ function Layout() {
             <Container py={10}>
                 <Outlet/>
             </Container>
-            <Footer/>
+            {/*<Footer/>*/}
         </div>
     );
 }
