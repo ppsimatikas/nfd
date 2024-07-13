@@ -12,19 +12,29 @@ A Decentralized Big Data Infrastructure.
 
 ### Install requirements
 
-1. Clone repo
+1. Clone repo 
 2. Use correct node version in `.nvmrc` or run `nvm use`
 3. Install yarn: `npm install -g yarn`
 4. Install libraries: `yarn`
-5. `cd backend`
-6. Setup python venv: `python -m venv venv"`
-7. Activate venv: `source venv/bin/activate`
-8. Install python requirements: `pip install -r ./requirements.txt`
+5. Smart contracts
+  1. `cd contracts/nfd`
+  2. Setup python venv: `python -m venv venv`
+  3. Activate venv: `source venv/bin/activate`
+  4. Install python requirements: `pip install -r ./requirements.txt`
+6. Backend
+  1. `cd backend`
+  2. Setup python venv: `python -m venv venv`
+  3. Activate venv: `source venv/bin/activate`
+  4. Install python requirements: `pip install -r ./requirements.txt`
 
 ### Setup environment variables
 
 1. Under `./backend` create a `.env` file
 2. Add `LIGHTHOUSE_TOKEN=<token>` create a token here: https://files.lighthouse.storage/dashboard/apikey
+
+### Compile the smart contracts
+
+`yarn build:contracts`
 
 ### Start the Application
 
@@ -32,8 +42,10 @@ A Decentralized Big Data Infrastructure.
 
 Or you can run the UI and Backend separately:
 
-1. Start the backend: `yarn start:backend`
-2. Start the frontend: `yarn start:ui`
+1. Start a local Tableland instance: `yarn start:tableland`
+2. Start the backend: `yarn start:backend`
+3. Start the frontend: `yarn start:ui`
+
 
 ### Accessing the application
 
