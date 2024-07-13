@@ -1,3 +1,3 @@
-from ingestion.land_use.ingest import ingest
+from ingestion.hunger.ingest import ingest
 
 ingest()

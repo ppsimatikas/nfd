@@ -38,11 +38,11 @@ export function getColor(
     variables: number[],
     startColor: string,
     endColor: string,
-    slippage: number = 1,
+    cutExtremes: number = 1,
     rangeSize: number = 10,
 ) {
     const min = Math.min(...variables)
-    const max = Math.max(...variables) * slippage
+    const max = Math.max(...variables) * cutExtremes
     const i = normalizeToRange(variable, min, max, rangeSize)
     const gradientArray = getColors(startColor, endColor, rangeSize)
     return gradientArray[i]
