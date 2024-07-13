@@ -6,13 +6,17 @@ def owner(accounts):
     return accounts[0]
 
 @pytest.fixture(scope="module")
+def producers(accounts):
+    return accounts[1:3]
+
+@pytest.fixture(scope="module")
 def domain(networks, owner, project):
     return project.Domain.deploy(owner, "agriculture", sender=owner)
 
 @pytest.fixture(scope="module")
 def tableland(domain):
     return ape.Contract(
-        domain._tableland(),
+        domain.getTablelandContract(),
         # partial IERC721 abi
         abi=[{
             "name": "ownerOf",

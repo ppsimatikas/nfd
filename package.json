@@ -5,14 +5,20 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "ui"
+    "ui",
+    "contracts/tableland"
   ],
   "scripts": {
-    "build": "yarn workspace ui run build",
+    "build:ui": "yarn workspace ui run build",
+    "build:contracts": "(cd contracts/nfd && source venv/bin/activate && ape compile)",
+    "build": "yarn build:contracts & yarn build:ui",
     "start:ui": "yarn workspace ui run start",
     "start:backend": "firebase emulators:start",
-    "start": "yarn start:backend & yarn start:ui",
-    "verify": "yarn workspace ui run test"
+    "start:tableland": "yarn workspace tableland run start",
+    "start": "yarn start:tableland & yarn start:backend & yarn start:ui",
+    "verify:ui": "yarn workspace ui run test",
+    "verify:contracts": "(cd contracts/nfd && source venv/bin/activate && ape test --disable-isolation)",
+    "verify": "yarn verify:ui & yarn verify:contracts"
   },
   "dependencies": {
     "firebase-tools": "^13.13.2"
