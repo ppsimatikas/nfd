@@ -1,0 +1,43 @@
+.container {
+ display: flex;
+ justify-content: flex-start;
+ padding: 20px;
+}
+
+.table {
+ width: 100%;
+ border: 1px solid #ccc;
+ border-collapse: collapse;
+ list-style: none;
+ list-style-type: none;
+ /* Remove default list styles */
+ padding: 0;
+}
+
+.treeItem {
+ display: flex;
+ align-items: center;
+ padding: 10px;
+ border-bottom: 1px solid #ccc;
+}
+
+.treeLabel {
+ flex: 1;
+}
+
+/* Adjust padding for root level nodes */
+.treeRoot {
+ padding-left: 10px;
+ /* Adjust as needed */
+}
+
+/* Optional: Remove default list styles for Mantine Tree component */
+.mantine-Tree-root {
+ list-style: none;
+ padding-left: 0;
+}
+
+/* Optional: Remove default list styles for Mantine Tree component items */
+.mantine-Tree-item {
+ padding-left: 0;
+}
