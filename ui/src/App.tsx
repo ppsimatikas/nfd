@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage"
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import {Container} from "@mantine/core";
+import Create from "./pages/Create";
 
 function Layout() {
     return (
@@ -28,6 +29,7 @@ function App() {
                 <Route index element={<Home/>}/>
                 <Route path="/" element={<Layout/>}>
                     <Route path="/landing-page" element={<LandingPage />} />
+                    <Route path="/create" element={<Create/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="*" element={<NoMatch/>}/>
                 </Route>
