@@ -3,13 +3,35 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {MantineProvider} from "@mantine/core";
+import {ButtonProps, createTheme, MantineProvider, MantineTheme} from "@mantine/core";
 import {BrowserRouter} from "react-router-dom";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import './ui-theme-styles'
 import {Notifications} from "@mantine/notifications";
 
 const queryClient = new QueryClient();
+const theme = createTheme({
+    black: '#040307',
+    fontFamily: 'ABCDiatype-Medium, sans-serif',
+    fontFamilyMonospace: 'ABCDiatypeSemi-Mono-Medium, monospace',
+    headings: {fontFamily: 'ABCDiatype-Medium, sans-serif'},
+    // colors: {
+    //     brand: violet,
+    //     green,
+    //     violet,
+    // },
+    components: {
+        Button: {
+            styles: ({radius}: MantineTheme, {variant}: ButtonProps) => ({
+                root: {
+                    borderRadius: radius.lg,
+                    border: 'none',
+                    background: !variant && 'linear-gradient(90deg, #C766EF 0%, #7928D2 51%, #2B0C52 100%)',
+                },
+            }),
+        },
+    },
+})
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -17,7 +39,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <MantineProvider>
+            <MantineProvider theme={theme}>
                 <QueryClientProvider client={queryClient}>
                     <Notifications/>
                     <App/>
