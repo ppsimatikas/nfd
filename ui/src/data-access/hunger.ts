@@ -1,14 +1,15 @@
 import {sql} from '../services/sql'
 import {useQuery} from '@tanstack/react-query';
 
-export function useGetLanduse() {
-    const table = "land_use"
+export function useGetHungerLevels() {
+    const table = "hunger_levels"
     return useQuery({
         queryKey: [table],
         queryFn: async () => {
-            const query = `select *
+            const query = `select code, sum(value) as value
                            from ${table}
-                           WHERE year = (SELECT MAX (year) FROM ${table})`
+                           where code is not null
+                           group by code`
 
             const res = await sql(table, query)
             return await res.json()

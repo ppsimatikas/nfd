@@ -4,9 +4,10 @@ import {getColor} from "../../utils/gradient";
 import {UiLoader} from "../loader";
 
 export function LanduseMap() {
-    const {data, error, isLoading} = useGetLanduse();
-    const landUse = data ?? []
+    const {data, isLoading} = useGetLanduse();
+    let landUse = data ?? []
 
+    landUse = landUse.filter((d: any) => d.code)
     const sqkms = landUse.map((d: any) => d.square_km)
 
     return (

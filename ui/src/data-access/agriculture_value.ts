@@ -1,8 +1,8 @@
 import {sql} from '../services/sql'
 import {useQuery} from '@tanstack/react-query';
 
-export function useGetLanduse() {
-    const table = "land_use"
+export function useGetAgricultureValue() {
+    const table = "agriculture_value"
     return useQuery({
         queryKey: [table],
         queryFn: async () => {
