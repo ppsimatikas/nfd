@@ -13,9 +13,7 @@ function Layout() {
     return (
         <div className="layout">
             <Header/>
-            <Container>
                 <Outlet/>
-            </Container>
             <Footer/>
         </div>
     );
