@@ -21,8 +21,8 @@ export function AnalyticsPage() {
     const [domain, setDomain] = useState(domains[0])
     const [tables, setTables] = useState(catalog[domain])
     const [table, setTable] = useState(tables[0])
-    const [filterColumn, setFilterColumn] = useState('Item')
-    const [valueColumn, setValueColumn] = useState('Value')
+    const [filterColumn] = useState('Item')
+    const [valueColumn] = useState('Value')
 
     const [filters, setFilters] = useState({})
     const {data, isLoading} = useGetFilteredData(table, filters);

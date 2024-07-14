@@ -28,9 +28,9 @@ function Home() {
                         <Image src="logo.png" alt="Logo" width={40} height={40} ml={5}/>
                         <Title c="white">emeter AI</Title>
                     </Group>
-                    <Text c="dimmed">The first Decentralized Big Data Platform</Text>
+                    <Text c="dimmed">The first Web3 Agriculture Big Data & AI Platform</Text>
                 </Stack>
-                <Text c="white" mt={10}>{messages[messageIndex]}</Text>
+                <Text c="white" mt={7}>{messages[messageIndex]}</Text>
             </Stack>
             <HomeMap index={messageIndex}/>
             <LaunchDAppButton/>

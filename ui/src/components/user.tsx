@@ -1,4 +1,4 @@
-import {Avatar, Button, Group, Popover, Text} from "@mantine/core";
+import {Avatar, Button, Group, Text} from "@mantine/core";
 import {getModal, getUser, reconnectWallet} from "../utils/wallet";
 import {ConnectWalletButton} from "./wallet_connect";
 import {useEffect, useState} from "react";
@@ -20,7 +20,7 @@ export function User() {
     }
 
     const {walletInfo, account} = getUser()
-    
+
     if (!account.isConnected) {
         return <ConnectWalletButton/>
     }
@@ -37,7 +37,7 @@ export function User() {
     return (
         <Button onClick={handleButtonClick}>
             <Group>
-                <Avatar size="sm" src={walletInfo?.icon} color="white" />
+                <Avatar size="sm" src={walletInfo?.icon} color="white"/>
                 <Text>{wallet}</Text>
             </Group>
         </Button>

@@ -48,7 +48,7 @@ function Create() {
 
     return (
         <Stack>
-            <Title>Enhance Demeter's knowledsge !</Title>
+            <Title>Enhance Demeter's knowledge !</Title>
             <Text>Add your very own dataset in Demeter...</Text>
             <Upload/>
         </Stack>

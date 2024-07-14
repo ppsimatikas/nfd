@@ -9,7 +9,7 @@ export interface UiGlobeProps extends GlobeProps {
 
 export function UiGlobe({animate, showCountries, ...props}: UiGlobeProps) {
     const globeEl: any = useRef()
-    const {data: countries, isLoading} = useCountries();
+    const {data: countries} = useCountries();
 
     useEffect(() => {
         // Auto-rotate

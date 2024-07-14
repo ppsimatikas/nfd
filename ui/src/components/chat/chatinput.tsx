@@ -27,7 +27,7 @@ function ChatInput({onAsk, disabled}: any) {
     return (
         <div className="chat-input-container">
             <div className="chat-input">
-                <img src="demeter.png"/>
+                <img src="demeter.png" alt="demeter"/>
                 <input
                     disabled={disabled}
                     type="text"

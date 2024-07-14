@@ -7,7 +7,7 @@ import {IconTerminal} from "@tabler/icons-react";
 
 
 const LandingPage: React.FC = () => {
-    const [table, setTable] = useState('crops_and_livestock')
+    const [table] = useState('crops_and_livestock')
     const [input, setInput] = useState('')
     const [query, setQuery] = useState('')
     const {data, isLoading, error} = useSql(table, query)

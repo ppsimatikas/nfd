@@ -13,7 +13,7 @@ const SlowText = ({text, textLoaded, revealSpeed = 25}: any) => {
             return () => clearTimeout(timeoutId);
         }
         textLoaded();
-    }, [visibleText, text, revealSpeed]);
+    }, [visibleText, text, revealSpeed, textLoaded]);
 
     return (
         <Text>

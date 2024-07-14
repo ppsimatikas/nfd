@@ -7,7 +7,7 @@ export function Filter({table, column, onChange}: {
     column: string
     onChange: (item: string) => void
 }) {
-    const {data, error, isLoading} = useGetValues(table, column);
+    const {data, isLoading} = useGetValues(table, column);
     const [value, setValue] = useState<string | null>(null)
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export function Filter({table, column, onChange}: {
             setValue(data[0])
             onChange(data[0])
         }
-    }, [data]);
+    }, [data, onChange]);
 
     return (
         <Group>
@@ -26,7 +26,6 @@ export function Filter({table, column, onChange}: {
                     value={value}
                     onChange={(o: any) => {
                         setValue(o)
-                        console.log("onChange", o);
                         onChange(o)
                     }}
                     searchable
