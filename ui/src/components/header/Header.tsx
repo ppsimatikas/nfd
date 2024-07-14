@@ -3,7 +3,7 @@ import {Anchor, Box, Button, Container, Group, Image} from '@mantine/core';
 import {Link} from 'react-router-dom';
 import styles from './Header.module.css';
 import {User} from "../user";
-import {IconPlus} from "@tabler/icons-react";
+import {IconMessages, IconPlus, IconTerminal, IconTimeline} from "@tabler/icons-react";
 
 function Header() {
     return (
@@ -14,13 +14,13 @@ function Header() {
                 </Anchor>
                 <Group className={styles.nav}>
                     <Button component={Link} to="/explore" className={styles.navButton} radius="lg">
-                        Explore
+                        <Group gap={4}><IconTerminal/>Explore</Group>
                     </Button>
                     <Button component={Link} to="/analytics" className={styles.navButton} radius="lg">
-                        Analytics
+                        <Group gap={4}><IconTimeline/>Analytics</Group>
                     </Button>
                     <Button component={Link} to="/chat" className={styles.navButton} radius="lg">
-                        Chat with Demeter !
+                        <Group gap={4}><IconMessages/>AI Agent</Group>
                     </Button>
                 </Group>
                 <Group className={styles.nav}>

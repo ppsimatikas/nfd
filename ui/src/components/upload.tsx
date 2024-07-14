@@ -43,6 +43,7 @@ function Upload() {
                     radius="lg"
                     label="Domain"
                     withAsterisk
+                    disabled
                     value={form.getValues().domain}
                     onChange={(event) => form.setFieldValue('domain', event.currentTarget.value)}
                 />

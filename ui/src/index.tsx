@@ -37,6 +37,30 @@ const theme = createTheme({
     fontFamilyMonospace: 'ABCDiatypeSemi-Mono-Medium, monospace',
     headings: {fontFamily: 'ABCDiatype-Medium, sans-serif'},
     components: {
+        TextInput: {
+            styles: () => ({
+                label: {
+                    display: 'block',
+                    textAlign: 'left',
+                },
+            }),
+        },
+        Textarea: {
+            styles: () => ({
+                label: {
+                    display: 'block',
+                    textAlign: 'left',
+                },
+            }),
+        },
+        Select: {
+            styles: () => ({
+                label: {
+                    display: 'block',
+                    textAlign: 'left',
+                },
+            }),
+        },
         Button: {
             styles: ({radius}: MantineTheme, {variant}: ButtonProps) => ({
                 root: {
