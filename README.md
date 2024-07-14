@@ -26,6 +26,7 @@ A Decentralized Big Data Infrastructure.
     2. Setup python venv: `python -m venv venv`
     3. Activate venv: `source venv/bin/activate`
     4. Install python requirements: `pip install -r ./requirements.txt`
+    5. Log in to firebase `npx firebase login`
 
 ### Setup environment variables
 
@@ -33,9 +34,10 @@ A Decentralized Big Data Infrastructure.
 2. Add `LIGHTHOUSE_TOKEN=<token>` create a token here: https://files.lighthouse.storage/dashboard/apikey
 3. Add `OPENAI_API_KEY=<token>` create a token here: https://platform.openai.com/settings/profile?tab=api-keys
 
-### Compile the smart contracts
+### Compile and deploy the smart contracts
 
 `yarn build:contracts`
+`yarn deploy:contracts:arbitrum`
 
 ### Start the Application
 

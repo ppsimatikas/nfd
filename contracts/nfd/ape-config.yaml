@@ -20,14 +20,29 @@ networks:
   custom:
     - name: tableland
       ecosystem: ethereum
-      base_ecosystem_plugin: filecoin
+      base_ecosystem_plugin: ethereum
       chain_id: 31337
+      default_provider: node
+    - name: mainnet
+      ecosystem: filecoin
+      base_ecosystem_plugin: ethereum
+      chain_id: 314
+      default_provider: node
+    - name: calibration
+      ecosystem: filecoin
+      base_ecosystem_plugin: ethereum
+      chain_id: 314159
       default_provider: node
 
 node:
   ethererum:
     tableland:
       uri: http://127.0.0.1:8545/
+  filecoin:
+    filecoin:
+      uri: https://api.node.glif.io/rpc/v1
+    filecoin-calibration:
+      uri: https://api.calibration.node.glif.io/rpc/v1
 
 ethereum:
   default_network: tableland

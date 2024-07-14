@@ -18,7 +18,9 @@
     "start": "yarn start:tableland & yarn start:backend & yarn start:ui",
     "verify:ui": "yarn workspace ui run test",
     "verify:contracts": "(cd contracts/nfd && source venv/bin/activate && ape test --disable-isolation)",
-    "verify": "yarn verify:ui & yarn verify:contracts"
+    "verify": "yarn verify:ui & yarn verify:contracts",
+    "deploy:contracts:arbitrum": "(cd contracts/nfd && source venv/bin/activate && ape run deploy --network arbitrum:sepolia)",
+    "deploy:contracts:filecoin": "(cd contracts/nfd && source venv/bin/activate && ape run deploy --network filecoin:calibration)"
   },
   "dependencies": {
     "firebase-tools": "^13.13.2"
