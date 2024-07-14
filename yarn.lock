@@ -4674,7 +4674,7 @@
     abitype "0.8.7"
     eventemitter3 "^4.0.7"
 
-"@wagmi/connectors@^5.0.22":
+"@wagmi/connectors@5.0.22", "@wagmi/connectors@^5.0.22":
   version "5.0.22"
   resolved "https://registry.yarnpkg.com/@wagmi/connectors/-/connectors-5.0.22.tgz#ba239e49159d2abb742d43665a149d3d9e24e6c6"
   integrity sha512-zIewJ+EpuL+RgcfUcPGbdWb+gJu64lK7xnhhve3E30rrjZfGjMWmuWM112X5CDjl1w3qeoZZQWzmSmrZq+d+7Q==
@@ -4697,7 +4697,7 @@
     eventemitter3 "^4.0.7"
     zustand "^4.3.1"
 
-"@wagmi/core@^2.11.7":
+"@wagmi/core@2.11.7", "@wagmi/core@^2.11.7":
   version "2.11.7"
   resolved "https://registry.yarnpkg.com/@wagmi/core/-/core-2.11.7.tgz#70738a43702dc5f41981aa64550784e136953b12"
   integrity sha512-O9bMbh9VebCUwoOgNhn27bX/VU8Lge9noD/ypUw3qpGGDBOv0/kwHyxJsvQipyDn55cKxpqW2KKo/7sIDgqVzA==
@@ -17307,10 +17307,10 @@ typescript-color-gradient@^3.3.2:
   resolved "https://registry.yarnpkg.com/typescript-color-gradient/-/typescript-color-gradient-3.3.2.tgz#fe5c49eabe52807b1482cd5e1caef2d3acb459e6"
   integrity sha512-O367R7tKXlmYi2Odyu2KZKegRcTrtfZh6r6XoVHMzI6PSMISMM4m7myVwZuM/BFRaRqpwW4WRQyIVF30DwBe0Q==
 
-typescript@^4.9.5:
-  version "4.9.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
-  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+typescript@^5.5.3:
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.3.tgz#e1b0a3c394190838a0b168e771b0ad56a0af0faa"
+  integrity sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==
 
 ufo@^1.4.0, ufo@^1.5.3:
   version "1.5.3"
@@ -17851,6 +17851,15 @@ wagmi@^1.4.13:
     "@wagmi/core" "1.4.13"
     abitype "0.8.7"
     use-sync-external-store "^1.2.0"
+
+wagmi@^2.10.10:
+  version "2.10.10"
+  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-2.10.10.tgz#91fea7a18c290c4170715dc355b8a329801d7ba5"
+  integrity sha512-J0ahwaIuo3uiUDt88zMJtkJRiW3W3kw7I7tK8XcvARNM6ODu44Sp++h5fWnXtZnkLaTaYWceg2RXN64pLD8FsA==
+  dependencies:
+    "@wagmi/connectors" "5.0.22"
+    "@wagmi/core" "2.11.7"
+    use-sync-external-store "1.2.0"
 
 walker@^1.0.7:
   version "1.0.8"

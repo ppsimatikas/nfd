@@ -46,6 +46,7 @@ A Decentralized Big Data Infrastructure.
 
 ### Compile and deploy the smart contracts
 
+`yarn verify:contracts`
 `yarn build:contracts`
 `yarn deploy:contracts:arbitrum`
 

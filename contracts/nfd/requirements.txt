@@ -3,3 +3,4 @@ ape-hardhat==0.8.0
 ape-solidity==0.8.2
 ape-arbitrum==0.8.0
 ape-etherscan==0.8.2
+ape-foundry==0.8.0

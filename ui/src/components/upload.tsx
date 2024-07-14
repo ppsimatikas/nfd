@@ -1,11 +1,12 @@
 import {useForm} from "@mantine/form";
-import {Button, Group, Stack, Textarea, TextInput} from "@mantine/core";
+import {Autocomplete, Button, ComboboxStringData, Group, Stack, Textarea, TextInput} from "@mantine/core";
 import CsvUpload from "../components/file_upload/csv_upload";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {UiLoader} from "../components/loader";
 import {uploadData} from "../services/tables";
 import {toastError, toastSuccess} from "../components/ui-toast";
 import {useNavigate} from "react-router-dom";
+import {useGetSchemas} from '../data-access/tableland';
 
 function Upload() {
     const [loading, setLoading] = useState(false);
@@ -19,6 +20,8 @@ function Upload() {
             data: [] as any[]
         },
     })
+
+    const {data: schemasData, isLoading: schemasIsLoading} = useGetSchemas();
 
     const submit = (formData: any) => {
         setLoading(true)
@@ -47,13 +50,16 @@ function Upload() {
                     value={form.getValues().domain}
                     onChange={(event) => form.setFieldValue('domain', event.currentTarget.value)}
                 />
-                <TextInput
+                <Autocomplete
                     size={formSize}
                     radius="lg"
                     label="Table"
                     withAsterisk
+                    placeholder={schemasIsLoading ? 'loading' : undefined}
+                    disabled={schemasIsLoading}
                     value={form.getValues().table}
-                    onChange={(event) => form.setFieldValue('table', event.currentTarget.value)}
+                    onChange={(value) => form.setFieldValue('table', value)}
+                    data={schemasData as unknown as ComboboxStringData}
                 />
                 <Textarea
                     size={formSize}

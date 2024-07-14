@@ -35,9 +35,10 @@
     "react-router-dom": "^6.24.1",
     "react-scripts": "5.0.1",
     "recharts": "2",
-    "typescript": "^4.9.5",
+    "typescript": "^5.5.3",
     "typescript-color-gradient": "^3.3.2",
     "viem": "^2.17.3",
+    "wagmi": "^2.10.10",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

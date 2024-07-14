@@ -1,4 +1,4 @@
-import {arbitrum, mainnet} from "viem/chains";
+import {arbitrumSepolia} from "viem/chains";
 import {createWeb3Modal, defaultWagmiConfig, Web3Modal} from "@web3modal/wagmi";
 import {getAccount, reconnect} from "@wagmi/core";
 
@@ -11,7 +11,7 @@ const metadata = {
     icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 
-const chains = [mainnet, arbitrum] as const
+const chains = [arbitrumSepolia] as const
 export const wagmiConfig = defaultWagmiConfig({
     chains,
     projectId,

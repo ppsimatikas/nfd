@@ -20,9 +20,11 @@ const TabsComponent: React.FC<TabsComponentProps> = ({ treeData }) => {
         <TreeView data={treeData} />
       </Tabs.Panel>
       <Tabs.Panel value="analytics">
+        &nbsp;
         {/* Content for Analytics tab */}
       </Tabs.Panel>
       <Tabs.Panel value="chat">
+        &nbsp;
         {/* Content for AI agent tab */}
       </Tabs.Panel>
     </Tabs>
