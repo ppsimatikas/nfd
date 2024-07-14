@@ -3,6 +3,10 @@
 Welcome to NFDs, Non-Fungible Data!
 A Decentralized Big Data Infrastructure.
 
+## Architecture of this Project
+
+![demeter_architecture.png](docs/demeter_architecture.png)
+
 ## Prerequisites
 
 1. Nvm installed on the machine, or Node version v21.1.0 (inside the .nvmrc file)
@@ -12,7 +16,7 @@ A Decentralized Big Data Infrastructure.
 
 ### Install requirements
 
-1. Clone repo 
+1. Clone repo
 2. Use correct node version in `.nvmrc` or run `nvm use`
 3. Install yarn: `npm install -g yarn`
 4. Install libraries: `yarn`
@@ -27,6 +31,12 @@ A Decentralized Big Data Infrastructure.
     3. Activate venv: `source venv/bin/activate`
     4. Install python requirements: `pip install -r ./requirements.txt`
     5. Log in to firebase `npx firebase login`
+7. Backend Auth
+    1. `cd backend_auth`
+    2. Use another version of node: `nvm use`
+    3. Install yarn: `npm install -g yarn`
+    4. Install dependencies: `yarn`
+    5. Build: `yarn build`
 
 ### Setup environment variables
 
@@ -49,14 +59,14 @@ Or you can run the UI and Backend separately:
 2. Start the backend: `yarn start:backend`
 3. Start the frontend: `yarn start:ui`
 
-
 ### Accessing the application
 
 You access the different parts of the APP:
 
 1. UI: http://localhost:3000/
 2. APIs: http://127.0.0.1:5001/demeter-a0451/europe-west1/on_request/
-3. Firebase Emulators: http://127.0.0.1:4000/
+3. Auth APIs: http://127.0.0.1:5001/demeter-a0451/us-central1/
+4. Firebase Emulators: http://127.0.0.1:4000/
 
 ## Deploy
 
