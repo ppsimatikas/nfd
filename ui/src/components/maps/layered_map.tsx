@@ -18,7 +18,7 @@ export function LayeredMap({w, data, valCol, areaCol, adminCol = 'ADM0_A3'}: {
             polygonCapColor={(a: any) => {
                 const record = data.find((d: any) => d[areaCol] === a.properties[adminCol])
                 if (record) {
-                    return getColor(record[valCol], vals, "#f6ffde", "#0c5217", 0.01) + "AF"
+                    return getColor(record[valCol], vals, "#C766EF", "#2B0C52", 0.01) + "AF"
                 }
                 return 'rgba(0, 0, 0, 0)'
             }}

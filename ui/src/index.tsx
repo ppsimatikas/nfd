@@ -8,6 +8,27 @@ import {BrowserRouter} from "react-router-dom";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import './ui-theme-styles'
 import {Notifications} from "@mantine/notifications";
+// Import the functions you need from the SDKs you need
+import {initializeApp} from "firebase/app";
+import {getAnalytics} from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyC3slADOgKHinV7w5RopzSlw5tz9XvggyI",
+    authDomain: "demeter-a0451.firebaseapp.com",
+    projectId: "demeter-a0451",
+    storageBucket: "demeter-a0451.appspot.com",
+    messagingSenderId: "155502866296",
+    appId: "1:155502866296:web:54c7788fd9e677e8b1628d",
+    measurementId: "G-XCYBBFJ3TP"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 const queryClient = new QueryClient();
 const theme = createTheme({
@@ -15,11 +36,6 @@ const theme = createTheme({
     fontFamily: 'ABCDiatype-Medium, sans-serif',
     fontFamilyMonospace: 'ABCDiatypeSemi-Mono-Medium, monospace',
     headings: {fontFamily: 'ABCDiatype-Medium, sans-serif'},
-    // colors: {
-    //     brand: violet,
-    //     green,
-    //     violet,
-    // },
     components: {
         Button: {
             styles: ({radius}: MantineTheme, {variant}: ButtonProps) => ({

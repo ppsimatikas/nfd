@@ -25,6 +25,7 @@ A Decentralized Big Data Infrastructure.
 
 1. Under `./backend` create a `.env` file
 2. Add `LIGHTHOUSE_TOKEN=<token>` create a token here: https://files.lighthouse.storage/dashboard/apikey
+3. Add `OPENAI_API_KEY=<token>` create a token here: https://platform.openai.com/settings/profile?tab=api-keys
 
 ### Start the Application
 

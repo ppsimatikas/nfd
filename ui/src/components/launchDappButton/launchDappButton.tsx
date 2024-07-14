@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import {Button} from '@mantine/core'; // Adjust this import according to your button component
+import {Button, Center} from '@mantine/core'; // Adjust this import according to your button component
 
 export function LaunchDAppButton() {
     const navigate = useNavigate();
@@ -10,11 +10,15 @@ export function LaunchDAppButton() {
     };
 
     return (
-        <div style={{marginTop: 'auto', textAlign: 'center', marginBottom: '20px'}}>
-            {/* Adjust styling or props as per your design */}
-            <Button onClick={handleLaunchDApp} variant="filled" radius="lg">
+        <Center>
+            <Button onClick={handleLaunchDApp} radius="lg" size="lg" style={{
+                position: 'fixed',
+                bottom: 40,
+                left: 'auto',
+                right: 'auto',
+            }}>
                 Explore Demeter
             </Button>
-        </div>
+        </Center>
     );
 }
