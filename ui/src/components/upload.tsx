@@ -25,7 +25,7 @@ function Upload() {
         uploadData(formData)
             .then(() => {
                 toastSuccess("Your dataset was created successfully !")
-                navigate('/')
+                navigate('/explore')
             })
             .catch(() => toastError("There was an error creating your dataset."))
             .finally(() => setLoading(false));

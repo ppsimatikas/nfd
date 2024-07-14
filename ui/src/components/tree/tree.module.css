@@ -1,15 +1,14 @@
 .treeRoot {
- padding-left: 10px;
- /* Adjust as needed */
+    padding-left: 10px;
+    /* Adjust as needed */
 }
 
 .treeItem {
- display: flex;
- align-items: center;
- padding: 10px;
- border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 .treeLabel {
- flex: 1;
+    flex: 1;
 }

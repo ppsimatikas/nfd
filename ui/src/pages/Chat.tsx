@@ -6,6 +6,7 @@ import Markdown from "react-markdown";
 import {Avatar, Box, Center, Group, Image, Stack, Text, Title} from "@mantine/core";
 import './Chat.scss';
 import {UiTable} from "../components/table";
+import {post} from "../services/api";
 
 export function ChatPage() {
     const [messages, setMessages] = useState<any[]>([]);
@@ -16,14 +17,7 @@ export function ChatPage() {
         setMessages((prevMessages: any) => [...prevMessages, {message, ai: false}]);
         setLoading(true);
         try {
-            const response = await fetch('http://127.0.0.1:5001/demeter-a0451/europe-west1/on_request/ai', {
-//          const response = await fetch('http://127.0.0.1:5000/query', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({message})
-            });
+            const response = await post('ai', {}, {message})
             setLoading(false);
             if (!response.ok) {
                 throw new Error('Failed to send message');

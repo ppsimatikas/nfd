@@ -1,7 +1,7 @@
-import {Stack, Text, Title} from "@mantine/core";
+import {Group, Image, Stack, Text, Title} from "@mantine/core";
 import {HomeMap} from "../components/maps/home_map";
 import {LaunchDAppButton} from '../components/launchDappButton/launchDappButton';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const messages = [
     "Agriculture is a $4.6 trillion dollar industry",
@@ -20,9 +20,16 @@ function Home() {
     }, []);
 
     return (
-        <Stack style={{minHeight: '100vh'}} align="center" justify="flex-start">
-            <Stack align="center" style={{marginTop: '10px'}}>
-                <Title c="white">Welcome to Demeter AI</Title>
+        <Stack>
+            <Stack align="center" mt={10}>
+                <Stack gap={2}>
+                    <Group gap={5}>
+                        <Title c="white">Welcome to </Title>
+                        <Image src="logo.png" alt="Logo" width={40} height={40} ml={5}/>
+                        <Title c="white">emeter AI</Title>
+                    </Group>
+                    <Text c="dimmed">The first Decentralized Big Data Platform</Text>
+                </Stack>
                 <Text c="white" mt={10}>{messages[messageIndex]}</Text>
             </Stack>
             <HomeMap index={messageIndex}/>
