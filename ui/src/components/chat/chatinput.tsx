@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './chatinput.scss';
+import {Avatar} from "@mantine/core";
 
 function ChatInput({onAsk, disabled}: any) {
     const [inputValue, setInputValue] = useState("");
@@ -27,7 +28,7 @@ function ChatInput({onAsk, disabled}: any) {
     return (
         <div className="chat-input-container">
             <div className="chat-input">
-                <img src="demeter.png" alt="demeter"/>
+                <Avatar src="demeter.png" alt="demeter"/>
                 <input
                     disabled={disabled}
                     type="text"

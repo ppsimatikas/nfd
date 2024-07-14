@@ -1,7 +1,9 @@
-const API_URL = 'http://127.0.0.1:5001/demeter-a0451/europe-west1/on_request/'
+const API_URL = 'https://path-kz5nyuezpa-ew.a.run.app'
+
+// const API_URL = 'http://127.0.0.1:5001/demeter-a0451/europe-west1/path'
 
 function getUrl(path: string, params: any = {}) {
-    const url = new URL(`${API_URL}${path}`)
+    const url = new URL(`${API_URL.replace("path", path)}`)
     url.search = new URLSearchParams(params).toString();
     return url
 }
