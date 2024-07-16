@@ -6,48 +6,51 @@ import {useSql} from "../data-access/use_sql";
 import {IconTerminal} from "@tabler/icons-react";
 
 
+// Sample tree data (adjust as per your needs)
+const treeData = [
+    {
+        value: 'agriculture',
+        label: 'agriculture',
+        children: [
+            {
+                value: 'crops_and_livestock',
+                label: 'crops_and_livestock',
+                children: [
+                    {
+                        value: 'date',
+                        label: <Text c="dimmed">date (datetime)</Text>,
+                    }
+                ]
+            },
+            {
+                value: 'hunger_levels',
+                label: 'hunger_levels',
+                children: [
+                    {
+                        value: 'date',
+                        label: <Text c="dimmed">date (datetime)</Text>,
+                    }
+                ]
+            },
+        ],
+    },
+];
+
 const LandingPage: React.FC = () => {
-    const [table] = useState('crops_and_livestock')
+    const [table, setTable] = useState('')
     const [input, setInput] = useState('')
     const [query, setQuery] = useState('')
     const {data, isLoading, error} = useSql(table, query)
 
     const handleKeyDown = (event: any) => {
         if (event.key === 'Enter') {
-            event.preventDefault();
+            event.preventDefault()
+            const tables = treeData[0].children.map((t) => t.value)
+            const _t = tables.filter((t) => input.indexOf(t) !== -1).pop()
+            setTable(_t ?? '')
             setQuery(input)
         }
     };
-
-    // Sample tree data (adjust as per your needs)
-    const treeData = [
-        {
-            value: 'agriculture',
-            label: 'agriculture',
-            children: [
-                {
-                    value: 'crops_and_livestock',
-                    label: 'crops_and_livestock',
-                    children: [
-                        {
-                            value: 'date',
-                            label: <Text c="dimmed">date (datetime)</Text>,
-                        }
-                    ]
-                },
-                {
-                    value: 'hunger_levels',
-                    label: 'hunger_levels',
-                    children: [
-                        {
-                            value: 'date',
-                            label: <Text c="dimmed">date (datetime)</Text>,
-                        }
-                    ]
-                },
-            ],
-        },
-    ];
 
     return (
         <Grid>

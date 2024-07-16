@@ -5,8 +5,8 @@ from api.controllers.sql_controller import process_sql_call
 from api.controllers.tables_controller import process_tables_call
 
 cors_options = options.CorsOptions(
-    # cors_origins="*",
-    cors_origins=[r"demeterai\.xyz$", r"https://demeterai\.xyz"],
+    cors_origins="*",
+    # cors_origins=[r"demeterai\.xyz$", r"https://demeterai\.xyz"],
     cors_methods=["get", "post"]
 )
 

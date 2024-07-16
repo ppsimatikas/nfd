@@ -4,7 +4,8 @@ import {verifyCloudProof} from "@worldcoin/idkit-core/backend";
 
 export const verify = onRequest(
     {
-        cors: [/demeterai\.xyz$/, "demeterai.xyz"],
+        cors: "*",
+        // cors: [/demeterai\.xyz$/, "demeterai.xyz"],
     }, async (request, response) => {
         const proof = request.body;
         const appId = "app_f32b2c3858088f2b38457067d1761622";
