@@ -41,6 +41,7 @@ function Create() {
                 <Text>We need to verify you before you can enhance Demeter's knowledge with your data</Text>
                 <Center>
                     <WorldIdConnect onSuccess={setWorldId}/>
+                    <button onClick={() => setWorldId(true)}>skip</button>
                 </Center>
             </Stack>
         )

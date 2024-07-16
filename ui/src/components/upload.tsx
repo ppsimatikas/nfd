@@ -6,7 +6,7 @@ import {UiLoader} from "../components/loader";
 import {uploadData} from "../services/tables";
 import {toastError, toastSuccess} from "../components/ui-toast";
 import {useNavigate} from "react-router-dom";
-import {useGetSchemas} from '../data-access/tableland';
+import {useGetSchemas, registerSchema} from '../data-access/tableland';
 
 function Upload() {
     const [loading, setLoading] = useState(false);
@@ -23,15 +23,17 @@ function Upload() {
 
     const {data: schemasData, isLoading: schemasIsLoading} = useGetSchemas();
 
-    const submit = (formData: any) => {
+    const submit = async (formData: any) => {
         setLoading(true)
-        uploadData(formData)
-            .then(() => {
-                toastSuccess("Your dataset was created successfully !")
-                navigate('/explore')
-            })
-            .catch(() => toastError("There was an error creating your dataset."))
-            .finally(() => setLoading(false));
+        try {
+            const response = await uploadData(formData)
+            await registerSchema()
+            toastSuccess("Your dataset was created successfully !")
+        } catch (e) {
+            toastError("There was an error creating your dataset.")
+        } finally {
+            setLoading(false)
+        }
     }
 
     const formSize = 'lg'

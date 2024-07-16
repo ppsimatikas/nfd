@@ -33,20 +33,23 @@ networks:
       base_ecosystem_plugin: ethereum
       chain_id: 314159
       default_provider: node
+    - name: local
+      ecosystem: filecoin
+      base_ecosystem_plugin: ethereum
+      chain_id: 31337
+      default_provider: node
 
 node:
-  ethererum:
-    tableland:
-      uri: http://127.0.0.1:8545/
   filecoin:
     filecoin:
       uri: https://api.node.glif.io/rpc/v1
     filecoin-calibration:
       uri: https://api.calibration.node.glif.io/rpc/v1
+    local:
+      uri: http://localhost:8545/
 
-ethereum:
-  default_network: tableland
-  tableland:
+filecoin:
+  local:
     default_transaction_type: 0
 
 

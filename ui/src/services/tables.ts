@@ -6,5 +6,8 @@ export function uploadData(body: {
     description: string,
     data: string,
 }) {
-    return post('tables', {}, body).then((res) => res.json())
+    return post('tables', {}, body).then((res) => {
+        console.log(res)
+        return res.json()
+    })
 }
